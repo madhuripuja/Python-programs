@@ -1,0 +1,45 @@
+time=" 9:55:48"
+blank=time.find(' ')
+
+if blank==0: #first hour digit
+   possible_no=['0','1','2']
+   
+elif blank==1: #second hour digit
+    first_digit=time[0]
+    if first_digit=='2':
+        possible_no=['0','1','2','3']
+    else:
+        possible_no=['0','1','2','3','4','5','6','7','8','9']
+elif blank==3 or blank==6:
+    possible_no=['0','1','2','3','4','5']
+    
+elif blank==4 or blank==7:
+    possible_no=['0','1','2','3','4','5','6','7','8','9']
+else:
+    print("No blank found")
+    possible_no=[]
+    
+print("Possible_no:",possible_no)
+
+min_time="99:99:99"
+max_time="00:00:00"
+
+for x in possible_no:
+    new_time=time[:blank]+x+time[blank+1:]
+    
+    h=int(time[:2])
+    m=int(time[3:5])
+    s=int(time[6:8])
+    if h>=0 and h<=23 and m>=0 and m<=59 and s>=0 and s<=59:
+        if new_time<min_time:
+            min_time=new_time
+        if new_time>max_time:
+            max_time=new_time
+            
+print("Smallest time:",min_time)
+print("Biggest time:",max_time)
+
+
+
+
+
