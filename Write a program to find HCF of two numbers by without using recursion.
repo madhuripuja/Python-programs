@@ -1,0 +1,40 @@
+import sys
+import ast
+def main():
+    
+    try:
+        user_input=sys.stdin.read().strip()
+        input_no= ast.literal_eval(user_input)
+        print("the input nos are:",input_no)
+        if len(user_input)<2:
+            print("need 2 numbers")
+            sys.exit(1)
+        print("the data type of input is:",type(user_input))
+        m=int(input_no[0])
+        print(m)
+        n=int(input_no[1])
+        print(n)
+        while m!=n:
+            if m>n:
+                m=m-n
+            else:
+                n=n-m
+        print(f"HCF OF Nos : {m}")
+    except ValueError:
+        print("please enter valid nos")
+    except IndexError:
+        print("no input provided")
+        sys.exit(1)
+
+if __name__=="__main__":
+    main()
+'''input :
+('48','18')
+output:
+the input nos are: ('48', '18')
+the data type of input is: <class 'str'>
+48
+18
+HCF OF Nos : 6 '''
+
+  
