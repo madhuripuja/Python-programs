@@ -10,10 +10,10 @@ elif blank==1: #second hour digit
         possible_no=['0','1','2','3']
     else:
         possible_no=['0','1','2','3','4','5','6','7','8','9']
-elif blank==3 or blank==6:
+elif blank==3 or blank==6: #minute or second tens place
     possible_no=['0','1','2','3','4','5']
     
-elif blank==4 or blank==7:
+elif blank==4 or blank==7: #minute or second ones place
     possible_no=['0','1','2','3','4','5','6','7','8','9']
 else:
     print("No blank found")
