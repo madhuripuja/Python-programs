@@ -1,0 +1,33 @@
+from collections import Counter
+def compression(s:str)->str:
+    characters=[]
+    for i in range(0,len(s),2):
+        char=s[i]
+        char_freq=int(s[i+1])
+        characters.append(char*char_freq)
+    
+    character_str="".join(characters)
+    print(character_str)
+    
+    
+    count=Counter(character_str)
+    print(count)
+    final_output=[]
+    for x in sorted(count.keys()):
+        count_value=count[x]
+        final_output.append(x)
+        final_output.append(str(count_value))
+        
+    return "".join(final_output)
+
+obj=compression("a3b5c2a2")
+print(obj)
+
+'''output:
+aaabbbbbccaa
+Counter({'a':5,'b':5,'c':2})
+a5b5c2
+
+        
+    
+
